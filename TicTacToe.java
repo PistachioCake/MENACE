@@ -90,6 +90,15 @@ public class TicTacToe {
    }
    
    /**
+    * Plays the next turn at the given position.
+    * @param coords The coordinates of the tile to play at.
+    * @return {@code true} if the player was able to play there, {@code false} otherwise.
+    */
+    public boolean play(int[] coords) {
+      return this.play(coords[0], coords[1]);
+    }
+   
+   /**
     * The positions of the remaining empty tiles.
     * @return An ArrayList of positions of tiles, as an {@code int[]} of length 2. 
     */
@@ -204,6 +213,7 @@ public class TicTacToe {
    }
    
    /**
+    * Checks whether the tile is empty or not. 
     * @param x The x position of the tile to check.
     * @param y The y position of the tile to check.
     * @return {@code true} if the tile is empty, {@code false} otherwise.
@@ -212,6 +222,17 @@ public class TicTacToe {
       return this.board[x][y] == empty;
    }
    
+   
+   /**
+    * Checks whether the tile is empty or not. 
+    * @param coords The coordinates of the tile to play at.
+    * @return {@code true} if the tile is empty, {@code false} otherwise.
+    */   
+    
+   public boolean isEmpty(int[] coords) {
+      return this.isEmpty(coords[0], coords[1]);
+   }
+    
    public String toString() {
       String str = "";
       for (int i = 0; i < 3; i++) {
